@@ -6,14 +6,14 @@ class SearchSection extends React.Component {
       handleSubmit,
       handleSearch,
       searchTerm,
-      // printTypeChange,
-      // bookTypeChange,
-      // bookType,
-      // printType,
+      printTypeChange,
+      bookTypeChange,
+      bookType,
+      printType,
     } = this.props;
 
     return (
-      <form className="search-form">
+      <form className="search-form" onSubmit={handleSubmit}>
         <label htmlFor="searchTerm">Search:</label>
         <input
           type="text"
@@ -23,16 +23,16 @@ class SearchSection extends React.Component {
           value={searchTerm}
           onChange={(event) => handleSearch(event)}
         />
-        <button onSubmit={handleSubmit}>Search!</button>
-        {/* <div className="filters">
+        <button>Search!</button>
+        <div className="filters">
           <label htmlFor="printType">Print Type:</label>
           <select
             name="printType"
             id="printType"
             value={printType}
-            onChange={(e) => printTypeChange(e.target.value)}
+            onChange={(event) => printTypeChange(event)}
           >
-            <option value="all">No Filter</option>
+            <option value="all">All</option>
             <option value="books">Book</option>
             <option value="magazines">Magazine</option>
           </select>
@@ -41,13 +41,13 @@ class SearchSection extends React.Component {
             name="bookType"
             id="bookType"
             value={bookType}
-            onChange={(e) => bookTypeChange(e.target.value)}
+            onChange={(event) => bookTypeChange(event)}
           >
             <option value="none">No Filter</option>
             <option value="free-ebooks">Free e-books</option>
             <option value="paid-ebooks">Paid e-books</option>
-          </select> */}
-        {/* </div> */}
+          </select>
+        </div>
       </form>
     );
   }

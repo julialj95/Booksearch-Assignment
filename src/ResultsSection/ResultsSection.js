@@ -5,7 +5,7 @@ class ResultsSection extends React.Component {
   render() {
     const { results } = this.props;
     console.log(results);
-    const bookResults = results.map((book, index) => {
+    const bookResults = results.items.map((book, index) => {
       return (
         <ResultItem
           key={index}
@@ -16,7 +16,11 @@ class ResultsSection extends React.Component {
         />
       );
     });
-    return <div className="results">{bookResults}</div>;
+    return (
+      <div className="results">
+        <h1>Results:</h1> {bookResults}
+      </div>
+    );
   }
 }
 
