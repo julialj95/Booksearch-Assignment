@@ -5,9 +5,10 @@ class ResultsSection extends React.Component {
   render() {
     const { results } = this.props;
     console.log(results);
-    const bookResults = results.items.map((book) => {
+    const bookResults = results.map((book, index) => {
       return (
         <ResultItem
+          key={index}
           title={book.volumeInfo.title}
           author={book.volumeInfo.authors[0]}
           imageUrl={book.volumeInfo.imageLinks.thumbnail}
