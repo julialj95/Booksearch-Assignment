@@ -22,17 +22,14 @@ class BooksearchApp extends React.Component {
     this.setState({
       searchTerm: event.target.value,
     });
-    console.log("search event triggered");
   }
 
   handlePrintType(event) {
     this.setState({ printType: event.target.value });
-    console.log("print type event triggered");
   }
 
   handleBookType(event) {
     this.setState({ bookType: event.target.value });
-    console.log("book type event triggered");
   }
 
   handleSubmit(event) {
@@ -58,7 +55,6 @@ class BooksearchApp extends React.Component {
       .join("&");
 
     const url = baseUrl + "?" + queryString + "&" + key;
-    console.log(url);
     fetch(url)
       .then((response) => {
         if (!response.ok) {
@@ -72,9 +68,7 @@ class BooksearchApp extends React.Component {
   }
 
   render() {
-    console.log("rendered");
     const objectLength = Object.keys(this.state.bookResults).length;
-    console.log(objectLength);
     const resultsDisplay = !objectLength ? (
       <h1>No results:</h1>
     ) : (

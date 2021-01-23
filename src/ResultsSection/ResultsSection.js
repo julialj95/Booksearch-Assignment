@@ -1,5 +1,6 @@
 import React from "react";
 import ResultItem from "../ResultItem/ResultItem";
+import "./ResultsSection.css";
 
 class ResultsSection extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class ResultsSection extends React.Component {
           title={book.volumeInfo.title}
           author={book.volumeInfo.authors[0]}
           imageUrl={book.volumeInfo.imageLinks.thumbnail}
-          description={book.description}
+          description={book.volumeInfo.description}
         />
       );
     });
